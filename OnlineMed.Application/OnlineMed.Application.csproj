@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OnlineMed.Contracts\OnlineMed.Contracts.csproj" />
     <ProjectReference Include="..\OnlineMed.Domain\OnlineMed.Domain.csproj" />
   </ItemGroup>
 
