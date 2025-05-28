@@ -3,7 +3,7 @@ using OnlineMed.Domain.Enums;
 
 namespace OnlineMed.Domain.Entities;
 
-public class Doctor : EntityBase
+public class Doctor : AuditableEntity
 {
     public required string FullName { get; set; }
     public required string Email { get; set; }
