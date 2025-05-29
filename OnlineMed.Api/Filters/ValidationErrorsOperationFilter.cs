@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
@@ -41,25 +42,23 @@ public class ValidationErrorsOperationFilter(IServiceScopeFactory scopeFactory) 
             }
         };
 
-        operation.Responses["400"].Content["application/problem+json"].Examples =
-            new Dictionary<string, OpenApiExample>
-            {
-                ["SampleValidationError"] = new OpenApiExample
+        if (operation.Responses["400"].Content.ContainsKey("application/problem+json"))
+        {
+            operation.Responses["400"].Content["application/problem+json"].Examples =
+                new Dictionary<string, OpenApiExample>
                 {
-                    Summary = "Missing or invalid fields",
-                    Value = OpenApiAnyFactory.CreateFromJson("""
                     {
-                        "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-                        "title": "One or more validation errors occurred.",
-                        "status": 400,
-                        "errors": {
-                            "Name": [ "Name is required." ],
-                            "Description": [ "Description must not exceed 500 characters." ]
+                        "SampleValidationError", new OpenApiExample
+                        {
+                            Summary = "Missing or invalid fields",
+                            Value = new OpenApiObject
+                            {
+                                ["Message"] = new OpenApiString("Validation failed for one or more fields.")
+                            }
                         }
-                        
                     }
-                    """)
-                }
-            };
+                };
+        }
+
     }
 }
