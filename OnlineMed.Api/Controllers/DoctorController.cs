@@ -6,8 +6,8 @@ using OnlineMed.Contracts.Responses.Doctor;
 namespace OnlineMed.Api.Controllers;
 
 [ApiController]
-[Route("api/doctor")]
-public sealed class DoctorController(IDoctorService service) : ControllerBase
+[Route("api/doctors")]
+public sealed class DoctorsController(IDoctorService service) : ControllerBase
 {
     /// <summary>
     /// Returns a list of doctors, optionally filtered by search term, experience, age, price, rating 
@@ -27,7 +27,7 @@ public sealed class DoctorController(IDoctorService service) : ControllerBase
     /// </summary>
     /// <param name="request"></param>
     /// <returns></returns>
-    [HttpGet("{Id:int:min(1)}")]
+    [HttpGet("{id:int:min(1)}")]
     [ProducesResponseType(typeof(DoctorResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
     public async Task<ActionResult> GetByIdAsync([FromQuery] GetDoctorByIdRequest request)
