@@ -8,6 +8,8 @@ internal class ApplicationDbContext(DbContextOptions<ApplicationDbContext> optio
     : DbContext(options), IApplicationDbContext
 {
     public virtual DbSet<Doctor> Doctors { get; set; }
+    public virtual DbSet<Patient> Patients { get; set; }
+    public virtual DbSet<Appointment> Appointments { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
