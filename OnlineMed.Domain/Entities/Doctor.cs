@@ -12,7 +12,9 @@ public class Doctor : AuditableEntity
     public required string ConversationLanguages { get; set; }
     public int Experience { get; set; }
     public int Age { get; set; }
-    public decimal Price { get; set; }
+    public decimal PricePerHour { get; set; }
     public decimal Rating { get; set; }
     public Gender Gender { get; set; }
+
+    public virtual ICollection<Appointment> Appointments { get; set; } = [];
 }

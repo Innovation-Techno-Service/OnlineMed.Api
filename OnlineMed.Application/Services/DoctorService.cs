@@ -26,7 +26,7 @@ internal sealed class DoctorService(IApplicationDbContext context) : IDoctorServ
                 x.ConversationLanguages,
                 x.Experience,
                 x.Age,
-                x.Price,
+                x.PricePerHour,
                 x.Rating,
                 x.Gender,
                 x.CreatedAt,
@@ -117,12 +117,12 @@ internal sealed class DoctorService(IApplicationDbContext context) : IDoctorServ
 
         if (request.MinPrice.HasValue)
         {
-            query = query.Where(d => d.Price >= request.MinPrice.Value);
+            query = query.Where(d => d.PricePerHour >= request.MinPrice.Value);
         }
 
         if (request.MaxPrice.HasValue)
         {
-            query = query.Where(d => d.Price <= request.MaxPrice.Value);
+            query = query.Where(d => d.PricePerHour <= request.MaxPrice.Value);
         }
 
         if (request.MinRating.HasValue)

@@ -55,7 +55,7 @@ public sealed class CreateDoctorRequestValidator : AbstractValidator<CreateDocto
 
         RuleFor(d => d.Price)
             .NotEmpty()
-            .WithMessage("Price is required.");
+            .WithMessage("PricePerHour is required.");
 
         RuleFor(d => d.Gender)
             .NotEmpty()
