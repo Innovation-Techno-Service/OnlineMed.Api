@@ -18,7 +18,7 @@ internal static class DoctorMappings
             ConversationLanguages = request.ConversationLanguages,
             Experience = request.Experience,
             Age = request.Age,
-            Price = request.Price,
+            PricePerHour = request.Price,
             Rating = request.Rating,
             Gender = request.Gender,
             CreatedAt = request.CreatedAt,
@@ -37,7 +37,7 @@ internal static class DoctorMappings
             ConversationLanguages: doctor.ConversationLanguages,
             Experience: doctor.Experience,
             Age: doctor.Age,
-            Price: doctor.Price,
+            Price: doctor.PricePerHour,
             Rating: doctor.Rating,
             Gender: doctor.Gender,
             CreatedAt: doctor.CreatedAt);
@@ -54,7 +54,7 @@ internal static class DoctorMappings
             ConversationLanguages: doctor.ConversationLanguages,
             Experience: doctor.Experience,
             Age: doctor.Age,
-            Price: doctor.Price,
+            Price: doctor.PricePerHour,
             Rating: doctor.Rating,
             Gender: doctor.Gender,
             CreatedAt: doctor.CreatedAt,
@@ -71,7 +71,7 @@ internal static class DoctorMappings
         doctor.ConversationLanguages = request.ConversationLanguages;
         doctor.Experience = request.Experience;
         doctor.Age = request.Age;
-        doctor.Price = request.Price;
+        doctor.PricePerHour = request.Price;
         doctor.Rating = request.Rating;
         doctor.Gender = request.Gender;
         doctor.CreatedAt = request.CreatedAt;
@@ -89,7 +89,7 @@ internal static class DoctorMappings
             ConversationLanguages: doctor.ConversationLanguages,
             Experience: doctor.Experience,
             Age: doctor.Age,
-            Price: doctor.Price,
+            Price: doctor.PricePerHour,
             Rating: doctor.Rating,
             Gender: doctor.Gender,
             CreatedAt: doctor.CreatedAt,

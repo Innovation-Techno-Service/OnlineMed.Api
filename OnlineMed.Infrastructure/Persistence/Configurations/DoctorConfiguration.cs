@@ -38,7 +38,7 @@ internal sealed class DoctorConfiguration : IEntityTypeConfiguration<Doctor>
         builder.Property(d => d.Age)
             .IsRequired();
 
-        builder.Property(d => d.Price)
+        builder.Property(d => d.PricePerHour)
             .IsRequired()
             .HasCurrencyPrecision();
 

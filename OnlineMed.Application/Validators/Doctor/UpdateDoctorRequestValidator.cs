@@ -61,7 +61,7 @@ public sealed class UpdateDoctorRequestValidator : AbstractValidator<UpdateDocto
 
         RuleFor(d => d.Price)
             .NotEmpty()
-            .WithMessage("Price is required.");
+            .WithMessage("PricePerHour is required.");
 
         RuleFor(d => d.Gender)
             .NotEmpty()

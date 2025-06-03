@@ -59,7 +59,7 @@ namespace OnlineMed.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Price")
+                    b.Property<decimal>("PricePerHour")
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
