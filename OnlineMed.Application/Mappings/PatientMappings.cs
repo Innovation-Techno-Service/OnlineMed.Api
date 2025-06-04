@@ -58,6 +58,6 @@ internal static class PatientMappings
             Email: patient.Email,
             PhoneNumber: patient.PhoneNumber,
             CreatedAt: patient.CreatedAt,
-            LastUpdatedAt: patient.LastUpdatedAt);
+            UpdatedAt: patient.LastUpdatedAt);
     }
 }

@@ -6,4 +6,4 @@ public sealed record UpdatePatientResponse(
     string Email,
     string? PhoneNumber,
     DateTime CreatedAt,
-    DateTime? LastUpdatedAt);
+    DateTime? UpdatedAt);
